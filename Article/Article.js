@@ -112,9 +112,14 @@ const data = [{
 
 */
 const accordion = document.querySelector('.articles');
-accordion.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+data.forEach(data => {
 
-function createPanel(panelTitle, panelDate, panelPara1, panelPara2, panelPara3) {
+    accordion.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+
+})
+
+
+function createPanel(title, date, para1, para2, para3) {
     //create dom variables    
     const panel = document.createElement('div');
     const panelTitle = document.createElement('h2');
@@ -133,20 +138,23 @@ function createPanel(panelTitle, panelDate, panelPara1, panelPara2, panelPara3) 
     panel.appendChild(panelButton);
 
     //add classes
-    panel.classlist.add('article');
-    panelButton.classlist.add('expandButton');
+    panel.classList.add('article');
+    panelButton.classList.add('expandButton');
+
 
     //text to buttons
-    expandButton.textContent = 'Expand';
-    panelTitle.textContent = panelTitle;
-    panelDate.textContent = panelDate;
-    panelPara1.textContent = panelPara1;
-    panelPara2.textContent = panelPara2;
-    panelPara3.textContent = panelPara3;
+    panelButton.textContent = 'Expand';
+    panelTitle.textContent = title;
+    panelDate.textContent = date;
+    panelPara1.textContent = para1;
+    panelPara2.textContent = para2;
+    panelPara3.textContent = para3;
+
 
     panelButton.addEventListener('click', event => {
-        panel.classList.toggle('.expandButton');
+        panel.classList.toggle('article-open');
     })
 
-    return createPanel;
+
+    return panel;
 }

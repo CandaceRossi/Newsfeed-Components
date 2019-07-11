@@ -33,8 +33,8 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-const body = document.querySelector('body');
-body.appendChild(createMenu(menuItems));
+const menuBody = document.querySelector('body');
+menuBody.appendChild(createMenu(menuItems));
 
 function createMenu(array) {
     // define new elements
@@ -44,7 +44,7 @@ function createMenu(array) {
 
     // Setup structure of elements
     menuContainer.appendChild(list);
-    body.appendChild(menuContainer);
+    menuBody.appendChild(menuContainer);
 
 
     array.forEach(menuItem => {
