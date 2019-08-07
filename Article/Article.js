@@ -112,3 +112,43 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+const accordion = document.querySelector('.articles');
+accordion.appendChild(createPanel(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+
+
+function createPanel(panelTitle, panelDate, panelPara1, panelPara2, panelPara3) {
+    //create dom variables    
+    const panel = document.createElement('div');
+    const panelTitle = document.createElement('h2');
+    const panelDate = document.createElement('p');
+    const panelPara1 = document.createElement('p');
+    const panelPara2 = document.createElement('p');
+    const panelPara3 = document.createElement('p');
+    const panelButton = document.createElement('span');
+
+    //append to variables
+    panel.appendChild(panelTitle);
+    panel.appendChild(panelDate);
+    panel.appendChild(panelPara1);
+    panel.appendChild(panelPara2);
+    panel.appendChild(panelPara3);
+    panel.appendChild(panelButton);
+
+    //add classes
+    panel.classlist.add('article');
+    panelButton.classlist.add('expandButton');
+
+    //text to buttons
+    expandButton.textContent = 'Expand';
+    panelTitle.textContent = panelTitle;
+    panelDate.textContent = panelDate;
+    panelPara1.textContent = panelPara1;
+    panelPara2.textContent = panelPara2;
+    panelPara3.textContent = panelPara3;
+
+    panelButton.addEventListener('click', event => {
+        panel.classList.toggle('.expandButton');
+    })
+
+    return createPanel;
+}
