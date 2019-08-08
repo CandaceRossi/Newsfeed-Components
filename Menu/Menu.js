@@ -1,13 +1,13 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-    'Students',
-    'Faculty',
-    "What's New",
-    'Tech Trends',
-    'Music',
-    'Log Out'
-];
+// let menuItems = [
+//     'Students',
+//     'Faculty',
+//     "What's New",
+//     'Tech Trends',
+//     'Music',
+//     'Log Out'
+// ];
 
 /* 
 
@@ -33,31 +33,37 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-const menuBody = document.querySelector('body');
-menuBody.appendChild(createMenu(menuItems));
+// const menuBody = document.querySelector('body');
+// menuBody.appendChild(createMenu(menuItems));
 
-function createMenu(array) {
-    // define new elements
-    const menuContainer = document.createElement('div');
-    const list = document.createElement('ul');
+// function createMenu(array) {
+//     // define new elements
+//     const menuContainer = document.createElement('div');
+//     const list = document.createElement('ul');
+//     menuBody.appendChild(ul);
+//     const li = {}
+//     menuItems.forEach((menuItems, i) => {
 
+//       li[i]= document.createElement('li')
+//       li[i].textContent=menuItems;
+//       ul.appendChild(li[i]);
+//     })
 
-    // Setup structure of elements
-    menuContainer.appendChild(list);
-    menuBody.appendChild(menuContainer);
+//     // Setup structure of elements
+//     menuContainer.appendChild(list);
+//     menuBody.appendChild(menuContainer);
 
+//     array.forEach((menuItem, i) => {
+//         var listItem = document.createElement('li');
+//         list.appendChild(listItem);
+//         listItem.textContent = menuItem;
+//         listItem.classList.add('li');
+//     })
 
-    array.forEach(menuItem => {
-        var listItem = document.createElement('li');
-        list.appendChild(listItem);
-        listItem.textContent = menuItem;
-        listItem.classList.add('li');
-    })
+//     let menuButton = document.querySelector('.menu-button');
+//     menuButton.addEventListener('click', event => {
+//         menuContainer.classList.toggle('menu--open');
+//     })
 
-    let menuButton = document.querySelector('.menu-button');
-    menuButton.addEventListener('click', event => {
-        menuContainer.classList.toggle('menu--open');
-    })
-
-    return menuContainer
-}
+//     return menuContainer
+// }
