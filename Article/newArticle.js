@@ -125,3 +125,36 @@ data.forEach(data => {
     )
   );
 });
+
+function createPanel(title, date, para1, para2, para3) {
+  const panel = document.createElement("div");
+  const panelTitle = document.createElement("h2");
+  const panelDate = document.createElememt("p");
+  const panelPara1 = document.createElement("p");
+  const panelPara2 = document.createElement("p");
+  const panelPara3 = document.createElement("p");
+  const panelButton = document.createElement("span");
+
+  panel.appendChild(panelTitle);
+  panel.appendChild(panelDate);
+  panel.appendChild(panelPara1);
+  panel.appendChild(panelPara2);
+  panel.appendChild(panelPara3);
+  panel.appendChild(panelButton);
+
+  panel.classList.add("article");
+  panelButton.classList.add("expandButton");
+
+  panelButton.textContent = "Expand";
+  panelTitle.textContent = title;
+  panelDate.textContent = date;
+  panelPara1.textContent = para1;
+  panelPara2.textContent = para2;
+  panelPara3.textContent = para3;
+
+  panelButton.addEventListener("click", event => {
+    panel.classList.toggle("article-open");
+  });
+
+  return panel;
+}
